@@ -10,7 +10,9 @@ ZSH_THEME="spaceship"
 plugins=(
     git
     brew
+    docker
     web-search
+    docker-compose
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
