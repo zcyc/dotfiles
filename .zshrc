@@ -11,6 +11,7 @@ plugins=(
     git
     brew
     docker
+    kubectl
     web-search
     docker-compose
     zsh-autosuggestions
