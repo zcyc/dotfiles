@@ -1,6 +1,7 @@
 # sbin
 export PATH="/usr/local/sbin:$PATH"
 # rust
+source "$HOME/.cargo/env"
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUSTUP_DIST_SERVER="https://mirrors.ustc.edu.cn/rust-static"
 export RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"
@@ -9,7 +10,7 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export GOPROXY="https://mirrors.aliyun.com/goproxy/"
 # homebrew
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 # flutter
 export PUB_HOSTED_URL="https://pub.flutter-io.cn"
 export FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
