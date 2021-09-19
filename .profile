@@ -8,7 +8,8 @@ export RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"
 # go
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
-export GOPROXY="https://mirrors.aliyun.com/goproxy/"
+export GO111MODULE="on"
+export GOPROXY="https://goproxy.cn"
 # homebrew
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 # flutter
