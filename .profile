@@ -9,7 +9,7 @@ export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export GO111MODULE="on"
-export GOPROXY="https://goproxy.cn"
+export GOPROXY="https://goproxy.cn,direct"
 # homebrew
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 # flutter
