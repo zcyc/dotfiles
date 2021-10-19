@@ -20,12 +20,3 @@ set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 set encoding=utf8
 set cursorline
 set backspace=indent,eol,start
-nnoremap <Up>    :echoe "Use k"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Down>  :echoe "Use j"<CR>
-nmap Q <Nop>
-inoremap <Up>    <ESC>:echoe "Use k"<CR>
-inoremap <Right> <ESC>:echoe "Use l"<CR>
-inoremap <Left>  <ESC>:echoe "Use h"<CR>
-inoremap <Down>  <ESC>:echoe "Use j"<CR>
