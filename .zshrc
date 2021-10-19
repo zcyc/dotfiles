@@ -1,7 +1,6 @@
 ## theme begin
-# https://github.com/denysdovhan/spaceship-prompt#oh-my-zsh
-# https://github.com/ryanoasis/nerd-fonts
-ZSH_THEME="spaceship"
+# https://github.com/romkatv/powerlevel10k#oh-my-zsh
+ZSH_THEME="powerlevel10k/powerlevel10k"
 ## theme end
 
 ## plugins begin
@@ -12,7 +11,6 @@ plugins=(
     brew
     docker
     kubectl
-    web-search
     docker-compose
     zsh-autosuggestions
     zsh-syntax-highlighting
