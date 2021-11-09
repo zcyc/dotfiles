@@ -17,3 +17,5 @@ export PUB_HOSTED_URL="https://pub.flutter-io.cn"
 export FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 # electron
 export ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"
+# java
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
