@@ -13,6 +13,7 @@ export GOPROXY="https://goproxy.cn,direct"
 # homebrew
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 # flutter
+export PATH="$HOME/flutter/bin:$PATH"
 export PUB_HOSTED_URL="https://pub.flutter-io.cn"
 export FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 # java
