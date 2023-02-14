@@ -36,12 +36,10 @@ set showmode
 set sidescrolloff=15
 set smartcase
 set softtabstop=2
-set spell spelllang=en_us
 set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ [%{(&fenc==\"\"?&enc:&fenc).(&bomb?\",BOM\":\"\")}]\ %c:%l/%L%)
 set t_Co=256
 set tabstop=4
 set termencoding=utf-8
-set undofile
 set wildmenu
 set wildmode=longest:list,full
 set wrap
