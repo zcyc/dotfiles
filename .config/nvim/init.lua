@@ -96,6 +96,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
+-- System clipboard (macOS)
+vim.o.clipboard = 'unnamedplus'
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -340,7 +343,14 @@ end
 local servers = {
   gopls = {},
   pyright = {},
-  rust_analyzer = {},
+  rust_analyzer = {
+    ["rust-analyzer"] = {
+      -- enable clippy on save
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
   tsserver = {},
   lua_ls = {},
   html = {},
