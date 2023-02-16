@@ -26,6 +26,31 @@ require('packer').startup(function(use)
     },
   }
 
+  use { -- rust tools
+    'simrat39/rust-tools.nvim',
+    config = function()
+      local rt = require('rust-tools')
+      rt.setup({
+        server = {
+          on_attach = function(_, bufnr)
+            -- Hover actions
+            vim.keymap.set('n', '<C-space>', rt.hover_actions.hover_actions, { buffer = bufnr })
+            -- Code action groups
+            vim.keymap.set('n', '<Leader>a', rt.code_action_group.code_action_group, { buffer = bufnr })
+          end,
+          settings = {
+            ['rust-analyzer'] = {
+              -- enable clippy on save
+              checkOnSave = {
+                command = 'clippy',
+              },
+            },
+          },
+        },
+      })
+    end
+  }
+
   use { -- TAB out
     'abecodes/tabout.nvim',
     config = function()
@@ -55,8 +80,8 @@ require('packer').startup(function(use)
   }
 
   use { -- Smart pairing of brackets
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+    'windwp/nvim-autopairs',
+    config = function() require('nvim-autopairs').setup {} end
   }
 
   use { -- Autocompletion
@@ -376,14 +401,7 @@ end
 local servers = {
   gopls = {},
   pyright = {},
-  rust_analyzer = {
-    ["rust-analyzer"] = {
-      -- enable clippy on save
-      checkOnSave = {
-        command = "clippy",
-      },
-    },
-  },
+  rust_analyzer = {},
   tsserver = {},
   lua_ls = {},
   html = {},
