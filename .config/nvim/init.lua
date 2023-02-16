@@ -285,7 +285,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'html', 'css', 'javascript', 'typescript', 'markdown', 'toml', 'help', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'bash', 'sql', 'json', 'tsx', 'yaml', 'html', 'css', 'javascript', 'typescript', 'markdown', 'toml', 'help', 'vim' },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -410,6 +410,8 @@ local servers = {
   cssls = {},
   jsonls = {},
   marksman = {},
+  bashls = {},
+  sqlls = {},
 }
 
 -- Setup neovim lua configuration
@@ -517,7 +519,24 @@ rt.setup({
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 -- nvim-tree setup
-require('nvim-tree').setup()
+require('nvim-tree').setup {
+  git = {
+    ignore = false,
+  },
+}
+-- open on setup
+local function open_nvim_tree(data)
+  -- buffer is a real file on the disk
+  local real_file = vim.fn.filereadable(data.file) == 1
+  -- buffer is a [No Name]
+  local no_name = data.file == '' and vim.bo[data.buf].buftype == ''
+  if not real_file and not no_name then
+    return
+  end
+  -- open the tree, find the file but don't focus it
+  require('nvim-tree.api').tree.toggle({ focus = false, find_file = true, })
+end
+vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = open_nvim_tree, })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
