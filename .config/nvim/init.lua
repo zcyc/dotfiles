@@ -28,6 +28,14 @@ require('packer').startup(function(use)
 
   use('simrat39/rust-tools.nvim')
 
+  use { -- File Explorer
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
+
   use { -- TAB out
     'abecodes/tabout.nvim',
     config = function()
@@ -476,7 +484,7 @@ cmp.setup {
   },
 }
 
--- rust tools
+-- [[ rust tools ]]
 local rt = require('rust-tools')
 rt.setup({
   -- tools = {
@@ -502,6 +510,15 @@ rt.setup({
     },
   },
 })
+
+-- [[ nvim-tree ]]
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+-- nvim-tree setup
+require('nvim-tree').setup()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
