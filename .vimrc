@@ -1,9 +1,9 @@
-syntax on
 filetype plugin indent on
 set autochdir
 set autoindent
 set autoread
 set backspace=indent,eol,start
+set clipboard=unnamed
 set cursorline
 set encoding=utf8
 set expandtab
@@ -44,3 +44,4 @@ set wildmenu
 set wildmode=longest:list,full
 set wrap
 set wrapmargin=2
+syntax on
