@@ -26,30 +26,7 @@ require('packer').startup(function(use)
     },
   }
 
-  use { -- rust tools
-    'simrat39/rust-tools.nvim',
-    config = function()
-      local rt = require('rust-tools')
-      rt.setup({
-        server = {
-          on_attach = function(_, bufnr)
-            -- Hover actions
-            vim.keymap.set('n', '<C-space>', rt.hover_actions.hover_actions, { buffer = bufnr })
-            -- Code action groups
-            vim.keymap.set('n', '<Leader>a', rt.code_action_group.code_action_group, { buffer = bufnr })
-          end,
-          settings = {
-            ['rust-analyzer'] = {
-              -- enable clippy on save
-              checkOnSave = {
-                command = 'clippy',
-              },
-            },
-          },
-        },
-      })
-    end
-  }
+  use('simrat39/rust-tools.nvim')
 
   use { -- TAB out
     'abecodes/tabout.nvim',
@@ -482,6 +459,33 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- rust tools
+local rt = require('rust-tools')
+rt.setup({
+  -- tools = {
+  --   hover_actions = {
+  --     auto_focus = true,
+  --   },
+  -- },
+  server = {
+    on_attach = function(_, bufnr)
+      on_attach(_, bufnr)
+      -- Hover actions
+      vim.keymap.set('n', '<C-space>', rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set('n', '<Leader>a', rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+    settings = {
+      ['rust-analyzer'] = {
+        -- enable clippy on save
+        checkOnSave = {
+          command = 'clippy',
+        },
+      },
+    },
+  },
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
