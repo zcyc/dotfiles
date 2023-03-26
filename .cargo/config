@@ -1,2 +1,2 @@
 [source.crates-io]
-registry = "sparse+https://rsproxy.cn/index/"
+registry = "https://rsproxy.cn/crates.io-index"
