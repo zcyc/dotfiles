@@ -1,0 +1,4 @@
+[source.crates-io]
+registry = "sparse+https://rsproxy.cn/index/"
+[net]
+git-fetch-with-cli = true
